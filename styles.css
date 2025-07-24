@@ -138,6 +138,11 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    max-height: 50vh;
+    overflow-y: auto;
 }
 
 .task-item {
@@ -145,7 +150,6 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 16px 20px;
-    margin-bottom: 16px;
     background-color: #f9f9fb;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
