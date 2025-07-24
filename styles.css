@@ -16,7 +16,8 @@ body {
     padding: 40px 20px;
 }
 
-main {
+.todo-container {
+    position: relative;
     background: #ffffff;
     width: 100%;
     max-width: 420px;
@@ -26,17 +27,60 @@ main {
     transition: box-shadow 0.3s ease;
 }
 
-main:hover {
+.todo-container:hover {
     box-shadow: 0 12px 36px rgba(0,0,0,0.15);
 }
 
-h1 {
+.pin-emoji {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 2rem;
+}
+
+.animated-heading {
     font-weight: 700;
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 30px;
     color: #4a4a4a;
     letter-spacing: 1.5px;
+    user-select: none;
+}
+
+.animated-heading .letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: letterAppear 0.6s forwards;
+}
+
+.animated-heading .letter:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.animated-heading .letter:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.animated-heading .letter:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.animated-heading .letter:nth-child(4) {
+    animation-delay: 0.7s;
+}
+
+.animated-heading span:last-child {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes letterAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Input group */
@@ -80,6 +124,7 @@ h1 {
     font-weight: 600;
     box-shadow: 0 6px 12px rgba(108, 99, 255, 0.4);
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
 }
 
 #addTaskBtn:hover {
